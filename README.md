@@ -1,7 +1,13 @@
-# FHIR Validator – Local Docker Environment for Swedish Base Profiles
+# FHIR Validator – Local Docker Environment for Validating Profiles
 
-This repository contains a complete setup to run the HL7 FHIR Validator locally with support for Swedish base profiles.  
+This repository contains my test at setting to run the HL7 FHIR Validator locally with example for Swedish base profiles.  
 The validator can run both as a **CLI tool** and as an **HTTP service** using Docker.
+
+I´m basing this on a project hosted on GitHub under hapifhir/org.hl7.fhir.validator-wrapper and serves as the CLI, Desktop GUI, and standalone HTTP validation server for the official FHIR Validator 
+inferno.healthit.gov
+
+Detailed documentation, including how to get started, configure, and run the validator, is available on HL7’s official documentation site: “Getting started with validator-wrapper”. It includes instructions for building, running, configuring, and hosting the validator via the CLI and server 
+hl7.github.io
 
 ## 🗂 Directory Structure
 
