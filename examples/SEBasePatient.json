@@ -1,0 +1,44 @@
+{
+  "resourceType": "Patient",
+  "id": "se-patient-example",
+  "meta": {
+    "profile": [
+      "http://hl7.se/fhir/ig/base/StructureDefinition/SEBasePatient"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">SE base patient example</div>"
+  },
+  "identifier": [
+    {
+      "system": "urn:oid:1.2.752.129.2.1.3.1",
+      "value": "196408233234"
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "family": "Andersson",
+      "given": ["Anna", "Maria"]
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1964-08-23",
+  "address": [
+    {
+      "use": "home",
+      "line": ["Storgatan 1"],
+      "city": "Stockholm",
+      "postalCode": "11122",
+      "country": "SE"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+46701234567",
+      "use": "mobile"
+    }
+  ]
+}

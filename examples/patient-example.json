@@ -1,0 +1,44 @@
+{
+  "resourceType": "Patient",
+  "id": "uscore-patient-example",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">US Core patient example</div>"
+  },
+  "identifier": [
+    {
+      "system": "urn:oid:2.16.840.1.113883.19.5.99999.1",
+      "value": "123456"
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "family": "Smith",
+      "given": ["John", "A"]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "555-555-5555",
+      "use": "mobile"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1980-05-01",
+  "address": [
+    {
+      "line": ["123 Main St"],
+      "city": "Metropolis",
+      "state": "NY",
+      "postalCode": "10001",
+      "country": "US"
+    }
+  ]
+}

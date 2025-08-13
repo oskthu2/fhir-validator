@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  prewarm:
+    build:
+      context: .
+    image: fhir-validator:local
+    entrypoint: ["/bin/sh","-lc"]              # <-- entrypoint belongs to the *service*
+    volumes:
+      - ./:/data
+      - fhir_pkg_cache:/root/.fhir/packages
+    environment:
+      - JAVA_OPTS=${JAVA_OPTS}
+      - FHIR_VERSION=${FHIR_VERSION}
+    command: >
+      set -e;
+      echo "FHIR version: ${FHIR_VERSION}";
+      for f in /data/fhir/ig/*.tgz; do
+        [ -e "$$f" ] || continue;
+        echo "Preloading: $$f";
+        validator -version ${FHIR_VERSION} -ig "$$f" -help || true;
+      done;
+      echo "Prewarm done."
+    restart: "no"
+
+  validator:
+    image: infernocommunity/fhir-validator-service
+    depends_on:
+      - prewarm
+    ports:
+      - "4567:4567"
+    environment:
+      - JAVA_TOOL_OPTIONS=${JAVA_TOOL_OPTIONS}
+    volumes:
+      - fhir_pkg_cache:/root/.fhir/packages
+      - ./fhir/ig:/home/igs:ro
+
+volumes:
+  fhir_pkg_cache: {}
